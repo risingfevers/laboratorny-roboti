@@ -66,6 +66,7 @@ print(f"Разность v1 и v2: {diff_v1_v2}")
 print(f"Разность v1 и v3: {diff_v1_v3}")
 print(f"Разность v2 и v3: {diff_v2_v3}")
 
+
 # Проверка на параллельность векторов
 def are_parallel(v1, v2):
     return np.allclose(np.cross(v1, v2), 0)
