@@ -2,17 +2,17 @@
 #include <cmath>
 #include <functional>
 
-// Функция f(x)
+// Г”ГіГ­ГЄГ¶ГЁГї f(x)
 double f(double x) {
     return x * exp(x) - x - 1;
 }
 
-// Производная f(x)
+// ГЏГ°Г®ГЁГ§ГўГ®Г¤Г­Г Гї f(x)
 double df(double x) {
     return (x + 1) * exp(x) - 1;
 }
 
-// Метод дихотомии
+// ГЊГҐГІГ®Г¤ Г¤ГЁГµГ®ГІГ®Г¬ГЁГЁ
 double bisection(double a, double b, double eps) {
     double c;
     while ((b - a) / 2.0 > eps) {
@@ -27,7 +27,7 @@ double bisection(double a, double b, double eps) {
     return c;
 }
 
-// Метод хорд (секущих)
+// ГЊГҐГІГ®Г¤ ГµГ®Г°Г¤ (Г±ГҐГЄГіГ№ГЁГµ)
 double secant(double a, double b, double eps) {
     double fa = f(a), fb = f(b);
     while (fabs(b - a) > eps) {
@@ -40,7 +40,7 @@ double secant(double a, double b, double eps) {
     return b;
 }
 
-// Метод простой итерации
+// ГЊГҐГІГ®Г¤ ГЇГ°Г®Г±ГІГ®Г© ГЁГІГҐГ°Г Г¶ГЁГЁ
 double iteration(double x0, double eps) {
     double x1;
     while (true) {
@@ -52,7 +52,7 @@ double iteration(double x0, double eps) {
     return x1;
 }
 
-// Метод Ньютона
+// ГЊГҐГІГ®Г¤ ГЌГјГѕГІГ®Г­Г 
 double newton(double x0, double eps) {
     double x1;
     while (true) {
@@ -67,25 +67,25 @@ double newton(double x0, double eps) {
 int main() {
     const double eps = 1e-6;
 
-    // Границы для метода дихотомии и хорд
+    // ГѓГ°Г Г­ГЁГ¶Г» Г¤Г«Гї Г¬ГҐГІГ®Г¤Г  Г¤ГЁГµГ®ГІГ®Г¬ГЁГЁ ГЁ ГµГ®Г°Г¤
     double a = 0.0, b = 2.0;
 
-    // Начальное приближение для метода Ньютона и метода итераций
+    // ГЌГ Г·Г Г«ГјГ­Г®ГҐ ГЇГ°ГЁГЎГ«ГЁГ¦ГҐГ­ГЁГҐ Г¤Г«Гї Г¬ГҐГІГ®Г¤Г  ГЌГјГѕГІГ®Г­Г  ГЁ Г¬ГҐГІГ®Г¤Г  ГЁГІГҐГ°Г Г¶ГЁГ©
     double x0 = 1.0;
 
-    // Метод дихотомии
+    // ГЊГҐГІГ®Г¤ Г¤ГЁГµГ®ГІГ®Г¬ГЁГЁ
     double root_bisection = bisection(a, b, eps);
     std::cout << "Root (Bisection method): " << root_bisection << std::endl;
 
-    // Метод хорд (секущих)
+    // ГЊГҐГІГ®Г¤ ГµГ®Г°Г¤ (Г±ГҐГЄГіГ№ГЁГµ)
     double root_secant = secant(a, b, eps);
     std::cout << "Root (Secant method): " << root_secant << std::endl;
 
-    // Метод простой итерации
+    // ГЊГҐГІГ®Г¤ ГЇГ°Г®Г±ГІГ®Г© ГЁГІГҐГ°Г Г¶ГЁГЁ
     double root_iteration = iteration(x0, eps);
     std::cout << "Root (Iteration method): " << root_iteration << std::endl;
 
-    // Метод Ньютона
+    // ГЊГҐГІГ®Г¤ ГЌГјГѕГІГ®Г­Г 
     double root_newton = newton(x0, eps);
     std::cout << "Root (Newton's method): " << root_newton << std::endl;
 
